@@ -414,7 +414,7 @@ address {
   background-color: var(--accent-color);
 }
 
-.social-card:not(:last-child) {
+.social-team .item:not(:last-child) {
   margin-right: 10px;
 }
 
