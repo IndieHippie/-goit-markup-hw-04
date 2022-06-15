@@ -125,6 +125,8 @@ address {
 }
 
 .contact-link-item {
+  display: inline-flex;
+  align-items: center;
   color: var(--color-gray);
 
   font-weight: 500;
@@ -133,16 +135,54 @@ address {
   letter-spacing: 0.02em;
 }
 
+.contact-link-item::before {
+  content: "";
+  background-size: contain;
+  background-repeat: no-repeat;
+  background-position: center;
+  margin-right: 10px;
+}
+
+.icon-envelope::before {
+  height: 12px;
+  width: 16px;
+  background-image: url("../images/envelope.svg");
+}
+
+.icon-vector::before {
+  height: 16px;
+  width: 10px;
+  background-image: url("../images/vector.svg");
+}
+
 .contact-link-item:hover,
 .contact-link-item:focus {
   color: var(--accent-color);
 }
 
+.icon-envelope:hover.icon-envelope::before,
+.icon-envelope:focus.icon-envelope::before {
+  background-image: url("../images/envelope-blue.svg");
+}
+
 /*============ Main ============*/
 
 .main-top {
-  padding: 200px 0;
+  max-width: 1600px;
+  margin-left: auto;
+  margin-right: auto;
+
+  background-image: linear-gradient(
+      rgba(47, 48, 58, 0.4) 100%,
+      rgba(47, 48, 58, 0.4) 100%
+    ),
+    url(../images/overlay.jpg);
+  background-repeat: no-repeat;
+  background-position: center;
+  background-size: cover;
   background-color: var(--third-background-color);
+
+  padding: 200px 0;
   text-align: center; /* center text and all inline element inside this block*/
 }
 
@@ -196,7 +236,6 @@ address {
 }
 
 .features-list-item {
-  
   width: 270px;
 }
 
@@ -302,7 +341,6 @@ address {
 
 .team-container {
   padding: 30px 0;
-  
 }
 
 .team-list-item {
@@ -347,7 +385,6 @@ address {
 }
 
 .clients-list .item {
-  padding: 16px 32px;
   border: 1px solid #afb1b8;
   border-radius: 4px;
 }
@@ -360,7 +397,10 @@ address {
   margin-right: 30px;
 }
 
-.clients-list .link {}
+.clients-list .link {
+  display: block;
+  margin: 16px 32px;
+}
 
 .client-icon {
   fill: var(--color-gray);
@@ -449,7 +489,6 @@ address {
   font-size: 18px;
   line-height: 2;
   letter-spacing: 0.06em;
-
 }
 
 .portfolio-item-about {
