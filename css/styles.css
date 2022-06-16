@@ -127,6 +127,8 @@ address {
 
 .contact-link-item {
   display: inline-flex;
+  height: 100%;
+  justify-content: center;
   align-items: center;
   color: var(--color-gray);
 
@@ -136,39 +138,19 @@ address {
   letter-spacing: 0.02em;
 }
 
-.contact-link-item::before {
-  content: "";
-  background-size: contain;
-  background-repeat: no-repeat;
-  background-position: center;
+.link-icon {
+  fill: var(--color-gray);
   margin-right: 10px;
 }
 
-.icon-envelope::before {
-  height: 12px;
-  width: 16px;
-  background-image: url("../images/envelope.svg");
-}
-
-.icon-vector::before {
-  height: 16px;
-  width: 10px;
-  background-image: url("../images/vector.svg");
+.contact-link-item:hover .link-icon,
+.contact-link-item:focus .link-icon {
+  fill: var(--accent-color);
 }
 
 .contact-link-item:hover,
 .contact-link-item:focus {
   color: var(--accent-color);
-}
-
-.icon-envelope:hover.icon-envelope::before,
-.icon-envelope:focus.icon-envelope::before {
-  background-image: url("../images/envelope-blue.svg");
-}
-
-.icon-vector:hover.icon-vector::before,
-.icon-vector:focus.icon-vector::before {
-  background-image: url("../images/smartphone.svg");
 }
 
 /*============ Main ============*/
@@ -349,9 +331,6 @@ address {
   padding: 30px 0;
 }
 
-.social-list .card {
-}
-
 .team-list-item {
   background-color: var(--background-color);
 
@@ -394,23 +373,24 @@ address {
 .social-card {
   display: inline-flex;
   height: 100%;
+  justify-content: center;
+  align-items: center;
   border: none;
   width: 44px;
   height: 44px;
   border-radius: 50%;
   cursor: pointer;
   background-color: var(--background-color);
-  /* margin-right: 10px; */
 }
 
 .card-icon {
-  margin: auto;
   fill: var(--social-color);
   width: 20px;
   height: 20px;
 }
 
-.social-card:hover {
+.social-card:hover,
+.social-card:focus {
   background-color: var(--accent-color);
 }
 
@@ -418,7 +398,8 @@ address {
   margin-right: 10px;
 }
 
-.social-card:hover .card-icon{
+.social-card:hover .card-icon,
+.social-card:focus .card-icon {
   fill: var(--background-color);
 }
 
@@ -431,32 +412,32 @@ address {
   padding: 0;
 }
 
-.clients-list .item {
+.clients-list .link {
+  display: inline-flex;
+  height: 100%;
+  justify-content: center;
+  align-items: center;
   width: 170px;
   height: 92px;
   border: 1px solid var(--social-color);
   border-radius: 4px;
 }
 
-.clients-list .item:hover {
+.clients-list .link:hover,
+.clients-list .link:focus {
   border: 1px solid var(--accent-color);
 }
 
-.clients-list .item:hover .client-icon {
+.clients-list .link:hover .client-icon,
+.clients-list .link:focus .client-icon {
   fill: var(--accent-color);
 }
 
-.clients-list .item:not(:last-child) {
+.clients-list .link {
   margin-right: 30px;
 }
 
-.clients-list .link {
-  display: inline-flex;
-  height: 100%;
-}
-
 .client-icon {
-  margin: auto;
   fill: var(--social-color);
   width: 106px;
   height: 60px;
@@ -489,7 +470,8 @@ address {
   margin-right: 8px;
 }
 
-.button-portfolio:hover {
+.button-portfolio:hover,
+.button-portfolio:focus {
   font-family: var(--main-font-family);
   color: var(--background-color);
   background-color: var(--accent-color);
@@ -497,21 +479,26 @@ address {
   font-size: 16px;
   text-align: center;
   letter-spacing: 0.03em;
+  box-shadow: 0px 3px 1px rgba(0, 0, 0, 0.1), 0px 1px 2px rgba(0, 0, 0, 0.08),
+    0px 2px 2px rgba(0, 0, 0, 0.12);
 }
-
-.button-portfolio:focus {
-  color: var(--background-color);
-  background-color: var(--accent-color);
-}
-
-
-
 
 /*===== Features Portfolio =====*/
 
 .portfolio-list {
   display: flex;
   flex-wrap: wrap;
+}
+
+.portfolio-list .link {
+  display: block;
+  color: var(--color);
+}
+
+.portfolio-list .link:hover,
+.portfolio-list .link:focus {
+  box-shadow: 0px 1px 1px rgba(0, 0, 0, 0.12), 0px 4px 4px rgba(0, 0, 0, 0.06),
+    1px 4px 6px rgba(0, 0, 0, 0.16);
 }
 
 .portfolio-container {
@@ -540,7 +527,6 @@ address {
   font-size: 18px;
   line-height: 2;
   letter-spacing: 0.06em;
-
 }
 
 .portfolio-item-about {
@@ -572,7 +558,6 @@ address {
 }
 
 .footer-list {
-  margin-top: 30px;
 }
 
 .footer-list .item:not(:last-child) {
@@ -580,6 +565,7 @@ address {
 }
 
 .address {
+  margin-top: 20px;
   line-height: 1.71;
   letter-spacing: 0.03em;
   color: var(--background-color);
@@ -602,11 +588,13 @@ address {
   color: var(--footer-contact-color);
 }
 
-.contact-mail-footer:hover {
+.contact-mail-footer:hover,
+.contact-mail-footer:focus {
   color: var(--accent-color);
 }
 
-.contact-tel-footer:hover {
+.contact-tel-footer:hover,
+.contact-tel-footer:focus {
   color: var(--accent-color);
 }
 
@@ -635,6 +623,8 @@ address {
 .button-social {
   display: inline-flex;
   height: 100%;
+  justify-content: center;
+  align-items: center;
   border: none;
   width: 44px;
   height: 44px;
@@ -648,12 +638,12 @@ address {
 }
 
 .button-icon {
-  margin: auto;
   fill: var(--background-color);
   width: 20px;
   height: 20px;
 }
 
-.button-social:hover {
+.button-social:hover,
+.button-social:focus {
   background-color: var(--accent-color);
 }
