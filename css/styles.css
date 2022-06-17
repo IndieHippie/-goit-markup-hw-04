@@ -436,7 +436,7 @@ address {
   fill: var(--accent-color);
 }
 
-.clients-list .link {
+.clients-list .item:not(:last-child) {
   margin-right: 30px;
 }
 
@@ -548,6 +548,7 @@ address {
 
 .footer-box {
   display: flex;
+  align-items: baseline;
 }
 
 .main-logo-footer {
@@ -612,7 +613,7 @@ address {
 }
 
 .right-box {
-  padding-top: 10px;
+ 
   margin-left: 70px;
 }
 
